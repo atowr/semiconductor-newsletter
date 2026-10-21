@@ -1,0 +1,41 @@
+sources:
+  - id: semiconductor_today_news
+    name: Semiconductor Today News
+    url: https://www.semiconductor-today.com/rss/news.xml
+    enabled: true
+  - id: semiconductor_today_features
+    name: Semiconductor Today Features
+    url: https://www.semiconductor-today.com/rss/features.xml
+    enabled: true
+  - id: semiconductor_engineering
+    name: Semiconductor Engineering
+    url: https://semiengineering.com/feed/
+    enabled: true
+  - id: ieee_spectrum_semiconductors
+    name: IEEE Spectrum Semiconductors
+    url: https://spectrum.ieee.org/feeds/topic/semiconductors.rss
+    enabled: true
+  - id: semiwiki
+    name: SemiWiki
+    url: https://semiwiki.com/feed/
+    enabled: true
+  - id: businesstimes_economy_policy
+    name: Business Times Economy & Policy
+    url: https://www.businesstimes.com.sg/rss/economy-policy
+    enabled: true
+  - id: businesstimes_global_enterprise
+    name: Business Times Global Enterprise
+    url: https://www.businesstimes.com.sg/rss/global-enterprise
+    enabled: true
+  - id: businesstimes_asean_business
+    name: Business Times ASEAN Business
+    url: https://www.businesstimes.com.sg/rss/asean-business
+    enabled: true
+  - id: businesstimes_telcos_media_tech
+    name: Business Times Telcos, Media & Tech
+    url: https://www.businesstimes.com.sg/rss/telcos-media-tech
+    enabled: true
+  - id: businesstimes_companies_markets
+    name: Business Times Companies & Markets
+    url: https://www.businesstimes.com.sg/rss/companies-markets
+    enabled: true
