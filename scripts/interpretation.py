@@ -66,4 +66,17 @@ Count words separated by spaces. Do not add other fields.
         )
         response.raise_for_status()
         data = json.loads(response.json()["choices"][0]["message"]["content"])
-    raise ValueError("DeepSeek response failed validation after 3 attempts")
+    if not isinstance(data, dict):
+        reason = "response is not a JSON object"
+    else:
+        missing = sorted(FIELDS - set(data)) if "FIELDS" in globals() else []
+        extra = sorted(set(data) - {
+            "what_happened", "why_it_matters", "adviser_relevance",
+            "client_impact", "market_significance"
+        })
+        counts = {
+            k: len(data[k].split()) for k in ("what_happened", "why_it_matters")
+            if isinstance(data.get(k), str)
+        }
+        reason = f"missing={missing}, extra={extra}, word_counts={counts}"
+    raise ValueError(f"DeepSeek response failed validation after 3 attempts: {reason}")
