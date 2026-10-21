@@ -56,6 +56,9 @@ def render_newsletter(articles, generated_at, preview=False):
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 * {{ box-sizing:border-box; }}
+header {{ text-align:left !important; }}
+header h1 {{ text-align:left !important; margin:4px 0 6px !important; }}
+header p {{ text-align:left !important; margin:2px 0 4px !important; }}
 body {{ margin:0; background:#eef1f4; color:#263449; font:15px/1.7 Montserrat,Arial,sans-serif; }}
 header {{ background:#10263f; color:white; border-bottom:5px solid #c9a34e; padding:30px max(20px,calc((100% - 920px)/2)); }}
 main {{ width:calc(100% - 40px); max-width:none; box-sizing:border-box; margin:30px auto; padding:25px 36px; background:white; }}
