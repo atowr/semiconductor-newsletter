@@ -46,7 +46,15 @@ URL: {article['url']}
     for _ in range(3):
         if validate_interpretation(data):
             return data
-        prompt += "\nVALIDATION ERROR: Correct the required five string fields and word counts. Return corrected JSON only."
+        prompt += """
+Your previous JSON failed validation. Correct it and return JSON only.
+Include exactly these five non-empty string fields:
+what_happened, why_it_matters, adviser_relevance,
+client_impact, market_significance.
+what_happened must contain 25-40 words.
+why_it_matters must contain 20-30 words.
+Count words separated by spaces. Do not add other fields.
+"""
         response = requests.post(
             os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com").rstrip("/") + "/chat/completions",
             headers={"Authorization": f"Bearer {key}"},
