@@ -1,5 +1,6 @@
 import json
 from html import escape, unescape
+from datetime import datetime
 import re
 
 def _snapshot_html():
@@ -82,7 +83,7 @@ footer {{ background:#10263f; color:#cbd5e1; padding:24px; text-align:center; fo
 .tradingview-widget-container iframe {{display:block;width:100%!important;max-width:100%}}
 .snapshot {{padding:20px 24px 24px}}</style></head><body>
 <header><h1>Semiconductor Industry Daily Brief</h1>
-<p>{escape(generated_at)}</p><p>{escape(mode)}</p></header>
+<p>{escape(datetime.fromisoformat(generated_at).strftime(chr(37)+"A, "+chr(37)+"-d "+chr(37)+"B "+chr(37)+"Y"))}</p><p>Providing concise, curated market intelligence</p></header>
 <section class="snapshot">
 <div class="snapshot-title">Market Snapshot — Live, as displayed by TradingView</div>
 <div class="snapshot-grid">""" + "".join(market_cards) + """</div>
