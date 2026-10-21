@@ -1,5 +1,6 @@
 import json
-from html import escape
+from html import escape, unescape
+import re
 
 def _snapshot_html():
     widgets = [
@@ -32,7 +33,7 @@ def render_newsletter(articles, generated_at, preview=False):
         title = escape(a["title"])
         url = escape(a["url"], quote=True)
         source = escape(a.get("source", "Unknown source"))
-        summary = escape(a.get("summary", ""))
+        summary = escape(unescape(re.sub(r"<[^>]+>", " ", a.get("summary", ""))))
         cards.append(f"""
         <article>
         <h2>{title}</h2>
