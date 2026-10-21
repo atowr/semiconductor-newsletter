@@ -34,7 +34,7 @@ def render_newsletter(articles, generated_at, preview=False):
         title = escape(a["title"])
         url = escape(a["url"], quote=True)
         source = escape(a.get("source", "Unknown source"))
-        summary = escape(unescape(re.sub(r"<[^>]+>", " ", a.get("summary", ""))))
+        summary = escape(" ".join(unescape(re.sub(r"<[^>]+>", " ", a.get("summary", ""))).split()[:45]))
         cards.append(f"""
         <article>
         <h2>{title}</h2>
