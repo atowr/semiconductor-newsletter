@@ -57,7 +57,7 @@ def render_newsletter(articles, generated_at, preview=False):
 * {{ box-sizing:border-box; }}
 body {{ margin:0; background:#eef1f4; color:#263449; font:15px/1.7 Montserrat,Arial,sans-serif; }}
 header {{ background:#10263f; color:white; border-bottom:5px solid #c9a34e; padding:30px max(20px,calc((100% - 920px)/2)); }}
-main {{ max-width:1000px; margin:30px auto; padding:25px 36px; background:white; }}
+main {{ width:calc(100% - 40px); max-width:none; box-sizing:border-box; margin:30px auto; padding:25px 36px; background:white; }}
 article {{ padding:20px 0; border-bottom:1px solid #dce3ec; }}
 h1 {{ font-size:clamp(25px,4vw,36px); }}
 h2 {{ font-size:19px; }}
